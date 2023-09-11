@@ -16,7 +16,7 @@ namespace WebLearningTest.Models
         public Address Address { get; set; }
         public RaceCategory RaceCategory { get; set; }
         [ForeignKey("UserApp")]
-        public int UserAppId { get; set;}
+        public string UserAppId { get; set;}
         public UserApp UserApp { get; set; }
     }
 }
