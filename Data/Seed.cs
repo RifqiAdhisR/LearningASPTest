@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using WebLearningTest.Data.Enum;
 using WebLearningTest.Models;
+using WebLearningTest.Data;
 
-namespace WebLearningTest.Data
+namespace RunGroopWebApp.Data
 {
     public class Seed
     {
@@ -83,7 +84,7 @@ namespace WebLearningTest.Data
                             Title = "Running Race 1",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
                             Description = "This is the description of the first race",
-                            RaceCategory = RaceCategory.Marathon,
+                            RaceCategory = RaceCategory.Marthon,
                             Address = new Address()
                             {
                                 Street = "123 Main St",

@@ -7,7 +7,6 @@ namespace WebLearningTest.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-            
         }
         public DbSet<Race> Races { get; set; }
         public DbSet<Club> Clubs { get; set; }  
