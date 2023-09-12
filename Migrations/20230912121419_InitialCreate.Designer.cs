@@ -12,8 +12,8 @@ using WebLearningTest.Data;
 namespace WebLearningTest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230912085712_initial")]
-    partial class initial
+    [Migration("20230912121419_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -128,7 +128,7 @@ namespace WebLearningTest.Migrations
 
             modelBuilder.Entity("WebLearningTest.Models.UserApp", b =>
                 {
-                    b.Property<string>("id")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("AddressId")
@@ -140,7 +140,7 @@ namespace WebLearningTest.Migrations
                     b.Property<int?>("Pace")
                         .HasColumnType("int");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.HasIndex("AddressId");
 

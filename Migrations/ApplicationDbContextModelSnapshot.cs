@@ -125,7 +125,7 @@ namespace WebLearningTest.Migrations
 
             modelBuilder.Entity("WebLearningTest.Models.UserApp", b =>
                 {
-                    b.Property<string>("id")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("AddressId")
@@ -137,7 +137,7 @@ namespace WebLearningTest.Migrations
                     b.Property<int?>("Pace")
                         .HasColumnType("int");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.HasIndex("AddressId");
 
