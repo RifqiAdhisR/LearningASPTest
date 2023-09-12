@@ -14,34 +14,34 @@ namespace WebLearningTest.Migrations
                 name: "Addresses",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    street = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    city = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    state = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Street = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Addresses", x => x.id);
+                    table.PrimaryKey("PK_Addresses", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "UserApp",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Pace = table.Column<int>(type: "int", nullable: true),
                     Milage = table.Column<int>(type: "int", nullable: true),
-                    Addressid = table.Column<int>(type: "int", nullable: true)
+                    AddressId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserApp", x => x.id);
+                    table.PrimaryKey("PK_UserApp", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserApp_Addresses_Addressid",
-                        column: x => x.Addressid,
+                        name: "FK_UserApp_Addresses_AddressId",
+                        column: x => x.AddressId,
                         principalTable: "Addresses",
-                        principalColumn: "id");
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -64,13 +64,13 @@ namespace WebLearningTest.Migrations
                         name: "FK_Clubs_Addresses_AddressId",
                         column: x => x.AddressId,
                         principalTable: "Addresses",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Clubs_UserApp_UserAppId",
                         column: x => x.UserAppId,
                         principalTable: "UserApp",
-                        principalColumn: "id");
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -84,7 +84,7 @@ namespace WebLearningTest.Migrations
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AddressId = table.Column<int>(type: "int", nullable: false),
                     RaceCategory = table.Column<int>(type: "int", nullable: false),
-                    UserAppId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserAppId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -93,14 +93,13 @@ namespace WebLearningTest.Migrations
                         name: "FK_Races_Addresses_AddressId",
                         column: x => x.AddressId,
                         principalTable: "Addresses",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Races_UserApp_UserAppId",
                         column: x => x.UserAppId,
                         principalTable: "UserApp",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -124,9 +123,9 @@ namespace WebLearningTest.Migrations
                 column: "UserAppId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserApp_Addressid",
+                name: "IX_UserApp_AddressId",
                 table: "UserApp",
-                column: "Addressid");
+                column: "AddressId");
         }
 
         /// <inheritdoc />

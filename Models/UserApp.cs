@@ -5,7 +5,7 @@ namespace WebLearningTest.Models
     public class UserApp 
     {
         [Key]
-        public string id { get; set; }
+        public string Id { get; set; }
         public int? Pace {  get; set; }
         public int? Milage { get; set; }
         public Address? Address { get; set; }
